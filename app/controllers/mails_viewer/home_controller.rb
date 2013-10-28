@@ -1,7 +1,7 @@
 module MailsViewer
   class HomeController < ActionController::Base
     layout false
-    before_filter :disabled_on_production
+    before_filter :render_message_if_disabled
     before_filter :find_absolute_filename, only: [:raw, :html, :attachment, :plain]
 
     def index
@@ -62,8 +62,8 @@ module MailsViewer
                                        Rails.root)
     end
 
-    def disabled_on_production
-      if Rails.env == 'production' || Rails.application.config.action_mailer.delivery_method.to_sym != :file
+    def render_message_if_disabled
+      if Rails.application.config.action_mailer.delivery_method.to_sym != :file
         render text: 'Mails Viewer is disabled' and return false
       end
     end

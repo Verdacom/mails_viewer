@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mails_viewer (0.1.0)
+    mails_viewer (0.1.1)
       jquery-datatables-rails
       jquery-rails (>= 2.0.1)
       rails (>= 3.1.0)
@@ -69,7 +69,7 @@ GEM
     journey (1.0.4)
     jquery-datatables-rails (1.11.2)
       jquery-rails
-    jquery-rails (2.2.1)
+    jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.7.7)
@@ -146,7 +146,7 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.37)
+    tzinfo (0.3.38)
     websocket (1.0.7)
     xpath (1.0.0)
       nokogiri (~> 1.3)

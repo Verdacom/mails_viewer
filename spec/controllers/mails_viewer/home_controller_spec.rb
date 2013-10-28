@@ -48,20 +48,6 @@ describe MailsViewer::HomeController do
     end
   end
 
-  describe "disabled on production" do
-    before :all do
-      Rails.env = 'production'
-    end
-    after :all do
-      Rails.env = 'test'
-    end
-
-    it "should return a disabled message when under production env" do
-      get :html, use_route: :mails_viewer
-      response.body.should == "Mails Viewer is disabled"
-    end
-  end
-
   describe "disabled when not deliveried by file" do
     before :all do
        Rails.application.config.action_mailer.delivery_method = :test
