@@ -4,7 +4,7 @@ module Mail
     # This function used to return a filename by mail's date and destination address
     def filename_for(to)
       timestamp = (date && date.to_time) || Time.now
-      "#{timestamp.to_i}.#{to}.txt"
+      "#{Random.new.rand(0...10000)}.#{timestamp.to_i}.#{to}.txt"
     end
   end
 end
