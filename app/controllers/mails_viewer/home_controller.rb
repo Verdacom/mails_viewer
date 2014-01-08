@@ -7,7 +7,7 @@ module MailsViewer
     def index
       if File.exist?(mails_path)
         Dir.chdir(mails_path) do
-          @mails = Dir["**/*"]
+          @mails = Dir["**/*"][0..50]
             .select{|f| File.file?(f)}
             .map{|f| [Mail.read(f), f]}
         end
